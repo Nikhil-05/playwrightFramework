@@ -1,0 +1,22 @@
+{
+  "name": "playwrightframework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhil-05/playwrightFramework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhil-05/playwrightFramework/issues"
+  },
+  "homepage": "https://github.com/Nikhil-05/playwrightFramework#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.0.13"
+  }
+}
