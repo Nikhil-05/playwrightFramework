@@ -1,12 +1,13 @@
 const{ test } = require('@playwright/test');
 
-const  { LoginPage} = require('./pages/LoginPage');
 const { loginPageUrl, invalidLoginError, username, incorrectPassword } = require('./utils/constants');
-const { DashboardPage } = require('./pages/DashboardPage');
+const {PageObjectManager} = require('./pages/PageObjectManager');
 
 let loginPage
-test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
+let pageManager;
+test.beforeEach(async ({page}) => {
+    pageManager = new PageObjectManager(page);
+    loginPage = pageManager.getLoginPage();
     await loginPage.openLoginPage(loginPageUrl);
 });
 
@@ -43,7 +44,7 @@ test('Valid sign in using forgot password', async({page})=>{
     await loginPage.fillUsername(username);
     await loginPage.fillPassword(ogPass);
     await loginPage.clickSignIn();
-    const  dashboardPage = new DashboardPage(page);
+    const  dashboardPage = pageManager.getDashboardPage();
     await dashboardPage.extractAndVerifyHelloText();
 });
 
