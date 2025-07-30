@@ -69,9 +69,9 @@ class LoginPage{
         await this.goToLogin.click();
     }
 
-    async pagePause(){
-        await this.page.pause();
-    }
+    // async pagePause(){
+    //     await this.page.pause();
+    // }
 
 }
 
